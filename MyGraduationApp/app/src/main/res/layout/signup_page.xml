@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+
+    <!-- 定位用，让两个按钮能完美重合，用invisible让其不显示 -->
+    <TextView
+        android:id="@+id/sign_btn_change2"
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:layout_marginLeft="80dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="175dp"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/signin_up_btn_bg"
+        android:text="登陆                    注册"
+        android:textColor="#ffffff"
+        android:textSize="20sp"
+        android:visibility="invisible"/>
+
+    <Button
+        android:id="@+id/signup_btn_chose"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:layout_alignRight="@id/sign_btn_change2"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="175dp"
+        android:background="@drawable/signin_up_movebtn_bg2"
+        android:textSize="20sp"
+        android:transitionName="choseBtn" />
+
+
+    <LinearLayout
+        android:id="@+id/signup_lilayout"
+        android:layout_width="match_parent"
+        android:layout_height="390dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="255dp"
+        android:orientation="vertical"
+        android:background="#ffffff">
+        <!-- 背景用于遮盖位于下层的登陆布局，默认背景完全透明，遮盖不了下层布局 -->
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/signup_iv_usrinputicon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="40dp"
+                android:background="@mipmap/login_page_usr" />
+
+            <EditText
+                android:id="@+id/signup_et_usr"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/signup_iv_usrinputicon"
+                android:layout_marginLeft="40dp"
+                android:layout_marginRight="40dp"
+                android:layout_centerInParent="true"
+                android:background="@null"
+                android:hint="请输入邮箱"
+                android:inputType="textEmailAddress"
+                android:maxLength="20"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:textColor="@color/login_usr_color" />
+            <com.hjq.widget.view.CountdownView
+                android:id="@+id/signup_cv_countdown"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="10dp"
+                style="@style/CountdownViewStyle"/>
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginRight="40dp"
+            android:background="@color/login_gap_color" />
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/signup_iv_otpinputicon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="40dp"
+                android:background="@mipmap/lgoin_page_otp" />
+
+            <EditText
+                android:id="@+id/signup_et_otp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/signup_iv_otpinputicon"
+                android:layout_centerHorizontal="true"
+                android:layout_marginLeft="40dp"
+                android:layout_marginRight="40dp"
+                android:background="@null"
+                android:hint="请输入验证码"
+                android:inputType="number"
+                android:maxLength="20"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:textColor="@color/login_pass_color" />
+        </RelativeLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginRight="40dp"
+            android:background="@color/login_gap_color" />
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/signup_iv_passinputicon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="40dp"
+                android:background="@mipmap/login_page_password" />
+
+            <com.hjq.widget.view.PasswordEditText
+                android:id="@+id/signup_et_pass"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/signup_iv_passinputicon"
+                android:layout_centerHorizontal="true"
+                android:layout_marginLeft="40dp"
+                android:layout_marginRight="40dp"
+                android:background="@null"
+                android:hint="请输入密码"
+                android:inputType="textPassword"
+                android:maxLength="20"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:textColor="@color/login_pass_color" />
+        </RelativeLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginRight="40dp"
+            android:background="@color/login_gap_color" />
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/signup_iv_passsureinputicon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="40dp"
+                android:background="@mipmap/login_page_password" />
+
+            <com.hjq.widget.view.PasswordEditText
+                android:id="@+id/signup_et_surepass"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/signup_iv_passsureinputicon"
+                android:layout_marginLeft="40dp"
+                android:layout_marginRight="40dp"
+                android:layout_centerInParent="true"
+                android:background="@null"
+                android:hint="请确认密码"
+                android:inputType="textPassword"
+                android:maxLength="20"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:textColor="@color/login_pass_color" />
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="15dp"
+            android:background="@color/login_gap_color" />
+
+        <Button
+            android:id="@+id/sign_btn_signup"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+
+            style="@style/SingupButtonStyle"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="40dp"
+            android:text="注 册"
+            android:textSize="20sp"/>
+
+    </LinearLayout>
+
+
+
+</RelativeLayout>

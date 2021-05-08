@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="top.baixiaoshengzjj.mygraduationapp">
+    <!-- 允许程序振动 -->
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <!-- 访问网络权限 -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <!-- 麦克风权限 -->
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <!-- 相机权限 -->
+    <uses-permission android:name="android.permission.CAMERA" />
+    <!-- 获取运营商信息，用于支持提供运营商信息相关的接口 -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <!-- 写入扩展存储权限 -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <!-- 这个权限用于访问GPS定位(用于定位消息，如果不用定位相关可以移除) -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <!-- api 21后被标记为deprecated -->
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <!-- 用于访问wifi网络信息 -->
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <!-- 用于获取wifi的获取权限 -->
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <!-- 允许程序在手机屏幕关闭后后台进程仍然运行 -->
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <!-- 允许程序修改声音设置信息 -->
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    <!-- 允许程序访问电话状态 -->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <!-- 允许程序开机自动运行 -->
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <!-- 捕获屏幕所需权限，Q后新增权限(多人音视频屏幕分享使用) -->
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <!-- IM SDK required end -->
+    <!-- 访问网络状态 -->
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <!-- 外部存储读写权限 -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <!-- 安装包的权限 -->
+    <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
+    <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
+    <!-- 这个权限用于进行网络定位 -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <!-- 这个权限用于访问GPS定位 -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
+    <application
+        android:name="top.baixiaoshengzjj.mygraduationapp.common.MyApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:networkSecurityConfig="@xml/network_security_config"
+        android:requestLegacyExternalStorage="true"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/MyTheme"
+        tools:replace="android:allowBackup">
+        <activity android:name="top.baixiaoshengzjj.mygraduationapp.ui.activity.MedicalRecordActivity"
+            android:windowSoftInputMode="stateAlwaysHidden|stateVisible|adjustResize"/>
+        <activity android:name="top.baixiaoshengzjj.mygraduationapp.ui.activity.MemberDetailsActivity" />
+        <activity android:name="top.baixiaoshengzjj.mygraduationapp.ui.activity.ChatActivity" /> <!-- 设置环信应用的AppKey -->
+        <meta-data
+            android:name="EASEMOB_APPKEY"
+            android:value="1129210406042418#mygraduationapp" /> <!-- 声明SDK所需的service SDK核心功能 -->
+        <service
+            android:name="com.hyphenate.chat.EMChatService"
+            android:exported="true" />
+        <service
+            android:name="com.hyphenate.chat.EMJobService"
+            android:exported="true"
+            android:permission="android.permission.BIND_JOB_SERVICE" /> <!-- 声明SDK所需的receiver -->
+        <receiver android:name="com.hyphenate.chat.EMMonitorReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_REMOVED" />
+
+                <data android:scheme="package" />
+            </intent-filter>
+            <!-- 可选filter -->
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.intent.action.USER_PRESENT" />
+            </intent-filter>
+        </receiver> <!-- 点击查看大图崩溃 -->
+        <activity
+            android:name="com.hyphenate.easeui.ui.EaseShowBigImageActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/horizontal_slide" /> <!-- 地图 -->
+        <activity
+            android:name="com.hyphenate.easeui.ui.EaseBaiduMapActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/horizontal_slide" /> <!-- 百度地图所需的service -->
+        <!-- 百度地图 IVkkgGL2Z79G9Gv1QEr6dBkjBoBNtGzq -->
+        <service
+            android:name="com.baidu.location.f"
+            android:enabled="true"
+            android:process=":remote" />
+
+        <meta-data
+            android:name="com.baidu.lbsapi.API_KEY"
+            android:value="IVkkgGL2Z79G9Gv1QEr6dBkjBoBNtGzq" />
+
+        <activity
+            android:name="top.baixiaoshengzjj.mygraduationapp.ui.activity.TeamActivity"
+            android:windowSoftInputMode="stateAlwaysHidden|stateVisible|adjustResize" /> <!-- ↑↑软键盘弹出不遮挡输入框且不把自定义标题栏挤出屏幕外↑↑ -->
+        <activity
+            android:name="top.baixiaoshengzjj.mygraduationapp.ui.activity.PatientMainActivity"
+            android:windowSoftInputMode="stateAlwaysHidden|stateVisible|adjustResize"></activity>
+        <activity
+            android:name="top.baixiaoshengzjj.mygraduationapp.ui.activity.NurseMainActivity"
+            android:windowSoftInputMode="stateAlwaysHidden|stateVisible|adjustResize" />
+        <activity
+            android:name="top.baixiaoshengzjj.mygraduationapp.ui.activity.DoctorMainActivity"
+            android:windowSoftInputMode="stateAlwaysHidden|stateVisible|adjustResize" /> <!-- 登录 -->
+        <activity
+            android:name="top.baixiaoshengzjj.mygraduationapp.ui.activity.SignInActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.Design.Light.NoActionBar"
+            android:windowSoftInputMode="stateHidden|adjustResize">
+
+        </activity> <!-- 注册 -->
+        <activity
+            android:name="top.baixiaoshengzjj.mygraduationapp.ui.activity.SignUpActivity"
+            android:theme="@style/Translucent"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+        <!-- 闪屏界面 -->
+        <activity android:name="top.baixiaoshengzjj.mygraduationapp.ui.activity.SplashActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <!-- 浏览器 -->
+        <activity
+            android:name="top.baixiaoshengzjj.mygraduationapp.ui.activity.BrowserActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:label="@string/web_title"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+        <activity android:name="top.baixiaoshengzjj.mygraduationapp.ui.activity.PhoneResetActivity" />
+        <activity android:name="top.baixiaoshengzjj.mygraduationapp.ui.activity.PasswordResetActivity"/>
+        <!-- 个人资料 -->
+        <activity
+            android:name="top.baixiaoshengzjj.mygraduationapp.ui.activity.PersonalDataActivity"
+            android:launchMode="singleTop" />
+        <!-- 拍照选择 -->
+        <activity
+            android:name="top.baixiaoshengzjj.mygraduationapp.ui.activity.CameraActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="top.baixiaoshengzjj.mygraduationapp.provider"
+            android:exported="false"
+            android:grantUriPermissions="true"
+            tools:replace="android:authorities">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider> <!-- 查看大图 -->
+        <activity
+            android:name="top.baixiaoshengzjj.mygraduationapp.ui.activity.ImagePreviewActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" /> <!-- 图片选择 -->
+        <activity
+            android:name="top.baixiaoshengzjj.mygraduationapp.ui.activity.ImageSelectActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:label="@string/image_select_title"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" /> <!-- 扫码录入 -->
+        <activity
+            android:name="com.king.zxing.CaptureActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/CaptureTheme" /> <!-- 打开相机程序就崩溃，原因是Android 7.0后直接使用本地真实路径的Uri被认为是不安全的，因此使用一种特殊的内容提供器FileProvider -->
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="top.baixiaoshengzjj.mygraduationapp.ileProvider"
+            android:exported="false"
+            android:grantUriPermissions="true"
+            tools:replace="android:authorities">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+
+        <activity
+            android:name="top.baixiaoshengzjj.mygraduationapp.ui.activity.GroupDetailActivity"
+            android:windowSoftInputMode="stateAlwaysHidden|stateVisible|adjustResize" />
+    </application>
+
+</manifest>

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:id="@+id/top"
+    >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <RelativeLayout
+            android:id="@+id/loginPage_topImage"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:background="@mipmap/login_page_topimage">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:background="@mipmap/signin_up_toplogo" />
+        </RelativeLayout>
+
+
+
+        <TextView
+            android:id="@+id/sign_btn_change"
+            android:layout_width="250dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="80dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="175dp"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/signin_up_btn_bg"
+            android:gravity="center"
+            android:text="登录                    注册"
+            android:textColor="#ffffff"
+            android:textSize="20sp"/>
+
+        <Button
+            android:id="@+id/signin_btn_chose"
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:layout_alignLeft="@+id/sign_btn_change"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="175dp"
+            android:background="@drawable/signin_up_movebtn_bg"
+            android:textSize="20sp"
+            android:transitionName="choseBtn" />
+
+        <RelativeLayout
+            android:id="@+id/signin_relayout"
+            android:layout_width="match_parent"
+            android:layout_height="600dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="255dp"
+            >
+
+            <include
+                layout="@layout/signin_page"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+
+        </RelativeLayout>
+
+
+
+    </RelativeLayout>
+</LinearLayout>

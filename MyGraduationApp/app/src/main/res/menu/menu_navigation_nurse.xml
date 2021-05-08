@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/nurse_infoinput"
+        android:checked="true"
+        android:icon="@drawable/ic_informationinput_black_24dp"
+        android:title="@string/info_input" />
+
+    <item
+        android:id="@+id/nurse_backup"
+        android:icon="@drawable/ic_propagand_black_24dp"
+        android:title="@string/propaganda" />
+    <!--must set the item title to empty-->
+    <item
+        android:id="@+id/nurse_empty"
+        android:title="" />
+    <item
+        android:id="@+id/nurse_favor"
+        android:icon="@drawable/ic_riskassessment_black_24dp"
+        android:title="@string/risk_assessment" />
+    <item
+        android:id="@+id/nurse_visibility"
+        android:icon="@drawable/ic_my_black_24dp"
+        android:title="@string/me" />
+</menu>

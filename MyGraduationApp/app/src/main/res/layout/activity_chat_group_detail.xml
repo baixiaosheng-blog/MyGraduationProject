@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#F2F2F2"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:hyphenate="http://schemas.android.com/apk/res-auto">
+
+    <com.hyphenate.easeui.widget.EaseTitleBar
+        android:id="@+id/title_bar"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:titleBarTitle="群组详情"
+        android:background="@color/white"
+        hyphenate:titleBarLeftImage="@drawable/ease_mm_title_back"/>
+
+<!--    <com.hjq.bar.TitleBar-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="5"/>
+
+    <TextView
+        android:id="@+id/tv_group_refund"
+        android:layout_marginBottom="20dp"
+        android:text="退出群组"
+        android:gravity="center"
+        android:textColor="@color/red"
+        android:textSize="16sp"
+        android:layout_height="40dp"
+        android:background="@color/white"
+        android:layout_width="match_parent" />
+
+
+</LinearLayout>

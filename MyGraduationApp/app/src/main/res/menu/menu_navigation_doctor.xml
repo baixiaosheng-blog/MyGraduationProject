@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/doctor_infoinput"
+        android:checked="true"
+        android:icon="@drawable/ic_audiotrack_black_24dp"
+        android:title="@string/music" />
+
+    <item
+        android:id="@+id/doctor_backup"
+        android:icon="@drawable/ic_propagand_black_24dp"
+        android:title="@string/propaganda" />
+    <!--must set the item title to empty-->
+    <item
+        android:id="@+id/doctor_empty"
+        android:title="" />
+    <item
+        android:id="@+id/doctor_favor"
+        android:icon="@drawable/ic_riskassessment_black_24dp"
+        android:title="@string/risk_assessment" />
+    <item
+        android:id="@+id/doctor_visibility"
+        android:icon="@drawable/ic_my_black_24dp"
+        android:title="@string/me" />
+</menu>

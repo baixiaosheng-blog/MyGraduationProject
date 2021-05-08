@@ -1,0 +1,2 @@
+include ':app', ':widget', ':widget2', ':base', ':easeui'
+rootProject.name = "MyGraduationApp"

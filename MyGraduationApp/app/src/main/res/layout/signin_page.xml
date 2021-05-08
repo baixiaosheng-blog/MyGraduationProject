@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
+
+    <LinearLayout
+        android:id="@+id/signin_location_input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+
+        <RelativeLayout
+            android:id="@+id/signin_relayout_usr"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/signin_iv_usrinputicon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="40dp"
+                android:background="@mipmap/login_page_usr" />
+
+            <EditText
+                android:id="@+id/login_et_usr"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/signin_iv_usrinputicon"
+                android:layout_marginLeft="40dp"
+                android:layout_centerInParent="true"
+                android:gravity="left"
+                android:layout_marginRight="40dp"
+                android:background="@null"
+                android:hint="请输入用户名"
+                android:inputType="textPersonName"
+                android:maxLength="20"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:textColor="@color/login_usr_color" />
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginRight="40dp"
+            android:background="@color/login_gap_color" />
+
+        <RelativeLayout
+            android:id="@+id/signin_relayout_pass"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/signin_iv_passinputicon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="40dp"
+                android:background="@mipmap/login_page_password" />
+
+            <com.hjq.widget.view.PasswordEditText
+                android:id="@+id/login_et_pass"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/signin_iv_passinputicon"
+                android:layout_marginLeft="40dp"
+                android:layout_marginRight="40dp"
+                android:gravity="left"
+                android:layout_centerInParent="true"
+                android:background="@null"
+                android:hint="请输入密码"
+                android:inputType="textPassword"
+                android:maxLength="20"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:textColor="@color/login_pass_color" />
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="15dp"
+            android:background="@color/login_gap_color" />
+
+        <TextView
+            android:id="@+id/signin_tv_forgetpass"
+            android:layout_gravity="right"
+            android:layout_marginRight="40dp"
+            android:layout_marginTop="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="忘记密码？"
+            android:textColor="#1166ff"/>
+
+    </LinearLayout>
+
+
+    <Button
+        android:id="@+id/signin_btn_login"
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:layout_centerInParent="true"
+        android:text="登录"
+        style="@style/ButtonStyle"
+        android:textSize="20sp"/>
+
+    <View
+        android:id="@+id/v_login_blank"
+        android:layout_width="wrap_content"
+        android:layout_height="0px"
+        android:layout_weight="5" />
+    <LinearLayout
+        android:id="@+id/ll_login_other"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="horizontal">
+
+        <View
+            style="@style/HorizontalLineStyle"
+            android:layout_width="60dp"
+            android:layout_weight="1" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="15dp"
+            android:text="其他登录方式"
+            android:textColor="@color/black50" />
+
+        <View
+            style="@style/HorizontalLineStyle"
+            android:layout_width="60dp"
+            android:layout_weight="1" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/ll_login_other"
+        android:layout_marginTop="30dp">
+
+        <ImageView
+            android:id="@+id/signin_iv_qq"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignRight="@+id/signin_v_location"
+            android:layout_marginRight="40dp"
+            android:src="@drawable/signin_page_qq" />
+        <View
+            android:id="@+id/signin_v_location"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_centerInParent="true"
+            android:visibility="invisible"/>
+
+        <ImageView
+            android:id="@+id/signin_iv_wechat"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignLeft="@id/signin_v_location"
+            android:layout_marginLeft="40dp"
+            android:src="@drawable/signin_page_wechat" />
+
+
+
+    </RelativeLayout>
+
+</LinearLayout>

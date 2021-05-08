@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#6200EE</color>
+    <color name="colorPrimaryDark">#3700B3</color>
+    <color name="colorAccent">#03DAC5</color>
+
+    <color name="windowBackground">#F4F4F4</color>
+    <color name="textColor">#333333</color>
+    <color name="textColorHint">#757575</color>
+
+    <color name="colorGreen">#ff669900</color>
+    <color name="colorGray">#ccc</color>
+
+    <!-- 按钮按压时的颜色 -->
+    <color name="colorButtonPressed">#AA5A8DDF</color>
+    <!-- 按钮禁用时的颜色 -->
+    <color name="colorButtonDisable">#BBBBBB</color>
+    <!-- 分割线的颜色 -->
+    <color name="colorLine">#ECECEC</color>
+    <!-- 图标颜色 -->
+    <color name="colorIcon">#7C7C7C</color>
+
+    <!-- 对话框确认按钮文本颜色 -->
+    <color name="colorConfirm">#007AFF</color>
+    <!-- 对话框取消按钮文本颜色 -->
+    <color name="colorCancel">#F44336</color>
+
+    <!--login page-->
+    <color name="background_color">#DEDEDE</color>
+    <color name="login_gap_color">#D6D6D6</color>
+    <color name="login_usr_color">#636363</color>
+    <color name="login_pass_color">#A1A1A1</color>
+    <color name="login_forget_color">#686868</color>
+    <color name="login_button_text_color">#FFFFFF</color>
+
+
+
+</resources>
